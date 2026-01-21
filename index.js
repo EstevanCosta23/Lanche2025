@@ -7,8 +7,17 @@ let menu = require("./data/menu");
 // Middleware para o Express entender JSON no corpo das requisições
 app.use(express.json());
 
-// [GET] /menu - Retorna todo o cardápio
+// [GET] /menu - Retorna todo o cardápio ou filtra por categoria
 app.get("/menu", (req, res) => {
+  const { categoria } = req.query;
+
+  // Se o parâmetro 'categoria' foi fornecido na URL...
+  if (categoria) {
+    const itensFiltrados = menu.filter(item => item.categoria.toLowerCase() === categoria.toLowerCase());
+    return res.json(itensFiltrados);
+  }
+
+  // Se nenhuma categoria foi fornecida, retorna o menu completo.
   res.json(menu);
 });
 
