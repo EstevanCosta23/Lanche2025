@@ -1,15 +1,10 @@
-### Deleta um item específico do menu
+
 DELETE http://localhost:3000/menu/2
 
-###
-# O separador ### é importante para separar as requisições
 
-### Lista todos os itens do menu (para verificar se o item foi deletado)
 GET http://localhost:3000/menu/
 
-###
 
-### Atualiza o preço de um item
 PUT http://localhost:3000/menu/1
 Content-Type: application/json
 
@@ -17,9 +12,6 @@ Content-Type: application/json
   "preco": 32.50
 }
 
-###
-
-### Cria um novo item no cardápio
 POST http://localhost:3000/menu
 Content-Type: application/json
 
@@ -31,4 +23,3 @@ Content-Type: application/json
   "disponivel": true
 }
 
-###
