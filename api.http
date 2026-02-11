@@ -1,0 +1,25 @@
+
+DELETE http://localhost:3000/menu/2
+
+
+GET http://localhost:3000/menu/
+
+
+PUT http://localhost:3000/menu/1
+Content-Type: application/json
+
+{
+  "preco": 32.50
+}
+
+POST http://localhost:3000/menu
+Content-Type: application/json
+
+{
+  "nome": "Batata Frita",
+  "descricao": "Porção de batatas fritas crocantes.",
+  "preco": 15.0,
+  "categoria": "Acompanhamentos",
+  "disponivel": true
+}
+
