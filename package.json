@@ -1,10 +1,19 @@
 {
   "name": "papiro",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000L\u0000a\u0000n\u0000c\u0000h\u0000e\u00002\u00000\u00002\u00005\u0000\r\u0000 \u0000# Lanche2025",
-  "main": "index.js",
+  "description": "This is a simple API for Lanche2025",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js",
+    "migration:create": "npx sequelize-cli migration:generate --migrations-path database/migrations --name",
+    "migration:run": "npx sequelize-cli db:migrate",
+    "migration:undo": "npx sequelize-cli db:migrate:undo",
+    "migration:redo": "npx sequelize-cli db:migrate:undo:all",
+    "seed:create": "npx sequelize-cli seed:generate --seeders-path database/seeders --name",
+    "seed:run": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo",
+    "seed:undo:all": "npx sequelize-cli db:seed:undo:all"
   },
   "repository": {
     "type": "git",
@@ -18,6 +27,15 @@
   },
   "homepage": "https://github.com/EstevanCosta23/Lanche2025#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "config": "^4.2.1",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "mysql2": "^3.9.0",
+    "sequelize": "^6.37.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.5"
   }
 }
